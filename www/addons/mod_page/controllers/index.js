@@ -43,7 +43,7 @@ angular.module('mm.addons.mod_page')
             downloadFailed = true;
         }).then(function() {
             return $mmaModPage.getPageHtml(module.contents, module.id).then(function(content) {
-                $scope.content = content;
+                  $scope.content = content;
 
                 if (downloadFailed && $mmApp.isOnline()) {
                     // We could load the main file but the download failed. Show error message.

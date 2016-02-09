@@ -95,7 +95,7 @@ angular.module('mm.core.course')
          * @return {Object}
          */
         self.getContentHandlerControllerFor = function(handles, module, courseid, sectionid) {
-            if (typeof enabledHandlers[handles] !== 'undefined') {
+             if (typeof enabledHandlers[handles] !== 'undefined') {
                 return enabledHandlers[handles].getController(module, courseid, sectionid);
             }
             return $mmCourseContentHandler.getController(module, courseid, sectionid);
@@ -113,6 +113,7 @@ angular.module('mm.core.course')
          * @protected
          */
         self.updateContentHandler = function(handles, handlerInfo) {
+            console.log("UPDATE CONTENT HANDLER:"+handles+" INFO:"+JSON.stringify(handlerInfo));
             var promise;
 
             if (typeof handlerInfo.instance === 'undefined') {
@@ -128,7 +129,7 @@ angular.module('mm.core.course')
             // Checks if the content is enabled.
             return promise.then(function(enabled) {
                 if (enabled) {
-                    enabledHandlers[handles] = handlerInfo.instance;
+                     enabledHandlers[handles] = handlerInfo.instance;
                 } else {
                     return $q.reject();
                 }

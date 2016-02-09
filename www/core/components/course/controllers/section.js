@@ -74,6 +74,15 @@ angular.module('mm.core.course')
                             module._controller =
                                     $mmCourseDelegate.getContentHandlerControllerFor(module.modname, module, courseid, section.id);
                             // Check if activity has completions and if it's marked.
+                    console.log(" xMODULE CONTROLLER FOR:"+JSON.stringify(module));
+                     if(module.modname==="page"){
+                         console.log("x TxESTING PAGE:");
+                        // module._controller.fetchContent();
+                         console.log("x VARIABLE:"+module._controller.testVar);
+                        // module._controller.test();
+                         
+                     }
+                     console.log("CONTROLLER:"+JSON.stringify(module._controller));
                             var status = statuses[module.id];
                             if (typeof status != 'undefined') {
                                 module.completionstatus = status;

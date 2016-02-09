@@ -15,7 +15,6 @@
                             <button ng-if="section.showRefresh && !section.isDownloading" ng-click="prefetch($event, section)" class="button button-icon" aria-label="{{ 'mm.core.refresh' | translate }}">
                                 <i class="icon ion-android-refresh"></i>
                             </button>
-
                             <ion-spinner ng-if="section.isDownloading && section.total > 0"></ion-spinner>
                             <span class="badge mm-course-download" ng-if="section.isDownloading && section.total > 0 && section.count < section.total">{{section.count}} / {{section.total}}</span>
                         </a>
